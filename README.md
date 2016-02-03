@@ -10,6 +10,9 @@ https://docs.docker.com/
 
 # Setup docker-machine on OSX (optional)
 ```
+# create a new docker machine called 'dev' with 8GB RAM and 4 cores.
+docker-machine create --driver virtualbox --virtualbox-memory "8192" --virtualbox-cpu-count "4" dev 
+
 # figure out any existing virtual machine, say 'dev'
 docker-machine ls
 
