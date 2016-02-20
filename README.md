@@ -194,7 +194,6 @@ make installcheck-good
 
 * Reinitilize cluster
 ```
-hawq stop cluster -a
 pkill postgres
 hdfs dfs -rm -r /hawq_default;
 rm -fr /home/gpadmin/hawq-data-directory/masterdd
