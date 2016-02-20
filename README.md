@@ -191,6 +191,19 @@ gpadmin=#
 cd /data/hawq
 make installcheck-good
 ```
+
+* Reinitilize cluster
+```
+hawq stop cluster
+pkill postgres
+hdfs dfs -rm -r /hawq_default;
+rm -fr /home/gpadmin/hawq-data-directory/masterdd
+mkdir /home/gpadmin/hawq-data-directory/masterdd
+hawq ssh -f /data/hawq-devel/etc/slaves -e 'rm -fr /home/gpadmin/hawq-data-directory/masterdd'
+hawq ssh -f /data/hawq-devel/etc/slaves -e 'mkdir /home/gpadmin/hawq-data-directory/masterdd'
+hawq init cluster
+```
+
 # More command with this script
 ```
 [root@centos70-vm1 centos7-docker]# make
