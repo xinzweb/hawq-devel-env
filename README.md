@@ -203,6 +203,14 @@ hawq ssh -f /data/hawq-devel/etc/slaves -e 'mkdir /home/gpadmin/hawq-data-direct
 hawq init cluster -a
 ```
 
+* If hitting error like `Exception in thread "main" java.lang.UnsupportedClassVersionError: org/apache/hadoop/fs/FsShell : Unsupported major.minor version 51.0`
+
+```
+stop-hdfs.sh
+start-hdfs.sh
+```
+
+
 # More command with this script
 ```
 [root@centos70-vm1 centos7-docker]# make
